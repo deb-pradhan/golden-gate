@@ -150,92 +150,152 @@ function ProtocolFlowInfographic() {
 function SystemFlowInfographic() {
   return (
     <div className="my-10 p-6 sm:p-8 bg-surface-card border border-border-default">
-      <p className="text-xs font-medium uppercase tracking-widest text-ink-tertiary mb-6">System Architecture</p>
+      <p className="text-xs font-medium uppercase tracking-widest text-ink-tertiary mb-6">System Flow</p>
       
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Input Layer */}
-        <div className="p-5 bg-surface-inset border border-border-default">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-8 rounded-full bg-slate-main flex items-center justify-center">
-              <svg className="w-4 h-4 text-ink-inverse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </div>
-            <span className="text-xs font-medium uppercase tracking-wider text-ink-tertiary">Input</span>
+      {/* Desktop Flowchart */}
+      <div className="hidden md:block">
+        <svg viewBox="0 0 600 400" className="w-full h-auto" preserveAspectRatio="xMidYMid meet">
+          {/* Definitions for arrows */}
+          <defs>
+            <marker id="arrowGold" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#B8860B" />
+            </marker>
+            <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#6B7280" />
+            </marker>
+          </defs>
+          
+          {/* USDau Box - Top Center */}
+          <rect x="220" y="20" width="100" height="50" rx="4" fill="#FDF6E3" stroke="#B8860B" strokeWidth="2" />
+          <text x="270" y="50" textAnchor="middle" className="font-mono text-sm font-medium" fill="#B8860B">USDau</text>
+          
+          {/* Staking Box - Center */}
+          <rect x="200" y="120" width="140" height="60" rx="4" fill="#F3F4F6" stroke="#9CA3AF" strokeWidth="2" />
+          <text x="270" y="155" textAnchor="middle" className="font-medium text-sm" fill="#374151">Staking</text>
+          
+          {/* USDC Input */}
+          <rect x="40" y="110" width="80" height="35" rx="4" fill="#F9FAFB" stroke="#D1D5DB" strokeWidth="1.5" />
+          <text x="80" y="132" textAnchor="middle" className="font-mono text-xs" fill="#6B7280">USDC</text>
+          
+          {/* USDT Input */}
+          <rect x="40" y="155" width="80" height="35" rx="4" fill="#F9FAFB" stroke="#D1D5DB" strokeWidth="1.5" />
+          <text x="80" y="177" textAnchor="middle" className="font-mono text-xs" fill="#6B7280">USDT</text>
+          
+          {/* sUSDau Box - Bottom Left */}
+          <rect x="200" y="240" width="140" height="50" rx="4" fill="#FDF6E3" stroke="#B8860B" strokeWidth="2" />
+          <text x="270" y="270" textAnchor="middle" className="font-mono text-sm font-medium" fill="#B8860B">sUSDau</text>
+          
+          {/* Protocol Treasury Box - Right */}
+          <rect x="440" y="100" width="120" height="50" rx="4" fill="#FDF6E3" stroke="#B8860B" strokeWidth="2" />
+          <text x="500" y="120" textAnchor="middle" className="text-xs font-medium" fill="#B8860B">Protocol</text>
+          <text x="500" y="135" textAnchor="middle" className="text-xs font-medium" fill="#B8860B">Treasury</text>
+          
+          {/* Gold Arbitrage Revenue Box - Right Middle */}
+          <rect x="440" y="190" width="120" height="50" rx="4" fill="#FDF6E3" stroke="#B8860B" strokeWidth="2" />
+          <text x="500" y="210" textAnchor="middle" className="text-xs font-medium" fill="#B8860B">Gold Arbitrage</text>
+          <text x="500" y="225" textAnchor="middle" className="text-xs font-medium" fill="#B8860B">Revenue</text>
+          
+          {/* GG Emissions Circle */}
+          <circle cx="400" cy="265" r="30" fill="#FDF6E3" stroke="#B8860B" strokeWidth="2" />
+          <text x="400" y="260" textAnchor="middle" className="text-xs font-medium" fill="#B8860B">GG</text>
+          <text x="400" y="273" textAnchor="middle" className="text-xs" fill="#B8860B">Emissions</text>
+          
+          {/* Gold Arbitrage Revenue Box - Bottom */}
+          <rect x="440" y="310" width="120" height="50" rx="4" fill="#FDF6E3" stroke="#B8860B" strokeWidth="2" />
+          <text x="500" y="330" textAnchor="middle" className="text-xs font-medium" fill="#B8860B">Gold Arbitrage</text>
+          <text x="500" y="345" textAnchor="middle" className="text-xs font-medium" fill="#B8860B">Revenue</text>
+          
+          {/* Arrows / Connectors */}
+          {/* USDau to Staking */}
+          <line x1="270" y1="70" x2="270" y2="118" stroke="#B8860B" strokeWidth="2" markerEnd="url(#arrowGold)" />
+          
+          {/* USDC to Staking */}
+          <line x1="120" y1="127" x2="198" y2="140" stroke="#6B7280" strokeWidth="1.5" markerEnd="url(#arrowGray)" />
+          
+          {/* USDT to Staking */}
+          <line x1="120" y1="172" x2="198" y2="160" stroke="#6B7280" strokeWidth="1.5" markerEnd="url(#arrowGray)" />
+          
+          {/* Staking to sUSDau */}
+          <line x1="270" y1="180" x2="270" y2="238" stroke="#B8860B" strokeWidth="2" markerEnd="url(#arrowGold)" />
+          
+          {/* Staking to Protocol Treasury */}
+          <line x1="340" y1="145" x2="438" y2="125" stroke="#B8860B" strokeWidth="2" markerEnd="url(#arrowGold)" />
+          
+          {/* Protocol Treasury to Gold Arbitrage Revenue */}
+          <line x1="500" y1="150" x2="500" y2="188" stroke="#B8860B" strokeWidth="2" markerEnd="url(#arrowGold)" />
+          
+          {/* Gold Arbitrage Revenue to GG Emissions */}
+          <line x1="440" y1="225" x2="422" y2="245" stroke="#B8860B" strokeWidth="2" markerEnd="url(#arrowGold)" />
+          
+          {/* GG Emissions to sUSDau */}
+          <line x1="370" y1="265" x2="342" y2="265" stroke="#B8860B" strokeWidth="2" markerEnd="url(#arrowGold)" />
+          
+          {/* Gold Arbitrage Revenue (middle) to Gold Arbitrage Revenue (bottom) */}
+          <line x1="500" y1="240" x2="500" y2="308" stroke="#B8860B" strokeWidth="2" markerEnd="url(#arrowGold)" />
+        </svg>
+      </div>
+      
+      {/* Mobile Flowchart - Vertical */}
+      <div className="md:hidden space-y-4">
+        {/* Input */}
+        <div className="flex items-center gap-3">
+          <div className="flex gap-2">
+            <div className="px-3 py-2 bg-surface-inset border border-border-default text-xs font-mono">USDC</div>
+            <div className="px-3 py-2 bg-surface-inset border border-border-default text-xs font-mono">USDT</div>
           </div>
-          <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-slate-main" />
-              <span className="font-mono text-sm">USDC</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-slate-main" />
-              <span className="font-mono text-sm">USDT</span>
-            </div>
+          <svg className="w-6 h-6 text-border-strong" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+          <div className="px-4 py-2 bg-surface-inset border border-border-default text-sm font-medium">Staking</div>
+        </div>
+        
+        {/* Flow indicator */}
+        <div className="flex justify-center">
+          <svg className="w-6 h-6 text-gold-main" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
+        
+        {/* Token Flow */}
+        <div className="grid grid-cols-2 gap-4">
+          <div className="p-4 bg-gold-pale border border-gold-main text-center">
+            <p className="font-mono text-sm font-medium text-gold-main">USDau</p>
+            <p className="text-xs text-ink-tertiary mt-1">Mint</p>
           </div>
-          <div className="mt-4 pt-4 border-t border-border-default">
-            <p className="text-xs text-ink-tertiary">Accepted collateral for minting USDau</p>
+          <div className="p-4 bg-gold-pale border border-gold-main text-center">
+            <p className="font-mono text-sm font-medium text-gold-main">sUSDau</p>
+            <p className="text-xs text-ink-tertiary mt-1">Stake & Earn</p>
           </div>
         </div>
         
-        {/* Protocol Layer */}
-        <div className="p-5 bg-gold-pale/30 border border-gold-main/30">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-8 rounded-full bg-gold-main flex items-center justify-center">
-              <svg className="w-4 h-4 text-ink-on-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-              </svg>
-            </div>
-            <span className="text-xs font-medium uppercase tracking-wider text-gold-dark">Protocol</span>
+        {/* Flow indicator */}
+        <div className="flex justify-center">
+          <svg className="w-6 h-6 text-gold-main" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
+        
+        {/* Treasury & Revenue */}
+        <div className="grid grid-cols-2 gap-4">
+          <div className="p-4 bg-gold-pale border border-gold-main text-center">
+            <p className="text-xs font-medium text-gold-main">Protocol Treasury</p>
           </div>
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-sm text-gold-dark">USDau</span>
-              <span className="text-xs text-ink-tertiary">Stablecoin</span>
-            </div>
-            <div className="h-px bg-gold-main/20" />
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-sm text-gold-dark">sUSDau</span>
-              <span className="text-xs text-ink-tertiary">Yield Token</span>
-            </div>
-            <div className="h-px bg-gold-main/20" />
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-sm text-gold-dark">GG</span>
-              <span className="text-xs text-ink-tertiary">Governance</span>
-            </div>
-          </div>
-          <div className="mt-4 pt-4 border-t border-gold-main/20">
-            <p className="text-xs text-gold-dark">Smart contract treasury & staking</p>
+          <div className="p-4 bg-gold-pale border border-gold-main text-center">
+            <p className="text-xs font-medium text-gold-main">Gold Arbitrage</p>
           </div>
         </div>
         
-        {/* Output Layer */}
-        <div className="p-5 bg-signal-success/5 border border-signal-success/30">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-8 rounded-full bg-signal-success flex items-center justify-center">
-              <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-              </svg>
-            </div>
-            <span className="text-xs font-medium uppercase tracking-wider text-signal-success">Yield</span>
-          </div>
-          <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-signal-success" />
-              <span className="text-sm">Gold Arbitrage Revenue</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-signal-success/50" />
-              <span className="text-sm">T-Bill Yield (Phase 2)</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-signal-success/30" />
-              <span className="text-sm">DeFi Yield (Phase 3)</span>
-            </div>
-          </div>
-          <div className="mt-4 pt-4 border-t border-signal-success/20">
-            <p className="text-xs text-signal-success">Distributed to sUSDau holders</p>
-          </div>
+        {/* Flow indicator */}
+        <div className="flex justify-center">
+          <svg className="w-6 h-6 text-signal-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
+        </div>
+        
+        {/* Yield Distribution */}
+        <div className="p-4 bg-signal-success/10 border border-signal-success/30 text-center">
+          <p className="text-sm font-medium text-signal-success">Yield → sUSDau Holders</p>
+          <p className="text-xs text-ink-tertiary mt-1">+ GG Emissions</p>
         </div>
       </div>
     </div>
