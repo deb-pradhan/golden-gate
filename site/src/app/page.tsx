@@ -309,27 +309,27 @@ function RoadmapTimeline() {
   const phases = [
     {
       phase: 'Phase 0',
-      title: 'Foundation',
+      title: 'Completed',
       status: 'complete',
-      items: ['Architecture & regulatory structuring', 'Gold arbitrage partner onboarded', 'Private pilots (under NDA)'],
+      items: ['Architecture + regulatory structuring complete', 'Gold arbitrage execution partner onboarded', 'Private pilots initiated (under NDA)'],
     },
     {
       phase: 'Phase 1',
       title: 'Go Live',
       status: 'active',
-      items: ['USDau minting (USDC/USDT)', 'Staking module (sUSDau)', 'Gold arbitrage treasury routing', 'Initial GG emissions'],
+      items: ['USDau minting (USDC/USDT)', 'Staking module (sUSDau issuance)', 'Gold arbitrage treasury routing', 'Initial GG emissions', 'Redemption buffer + DAO dashboard'],
     },
     {
       phase: 'Phase 2',
       title: 'Regulatory Expansion',
       status: 'upcoming',
-      items: ['EMI licensing application', 'Tokenized T-bill integration', 'Fiat on/off-ramp launch'],
+      items: ['EMI licensing application', 'Tokenized T-bill integration', 'Launch fiat on/off-ramp via partner', 'sUSDau vault upgrades with yield gauges'],
     },
     {
       phase: 'Phase 3',
-      title: 'Scale & Monetize',
+      title: 'Scale and Monetize',
       status: 'upcoming',
-      items: ['DAO-governed Treasury policy', 'Institutional integrations', 'Global ecosystem partnerships'],
+      items: ['DAO-governed Treasury allocation policy', 'Loyalty NFTs, veGG voting, yield curve control', 'Institutional integrations (neobanks, fintech apps, L2s)', 'Ecosystem partnerships across Africa, Asia, and Europe'],
     },
   ];
   
@@ -502,7 +502,7 @@ export default function WhitepaperPage() {
               </span>
               <span className="text-ink-tertiary">·</span>
               <span className="text-xs text-ink-tertiary">
-                v1.0 — January 2026
+                v1.0 · January 2026
               </span>
             </div>
             
@@ -812,42 +812,12 @@ export default function WhitepaperPage() {
               
               <h3>Treasury Structure</h3>
               
-              {/* Treasury Structure Visual */}
-              <div className="my-8 not-prose grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div className="p-4 bg-surface-inset border border-border-default text-center">
-                  <div className="w-10 h-10 mx-auto mb-2 rounded-full bg-slate-main/10 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-slate-main" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
-                  </div>
-                  <p className="text-xs font-medium text-ink-primary">Multi-sig</p>
-                  <p className="text-xs text-ink-tertiary mt-1">Custody control</p>
-                </div>
-                <div className="p-4 bg-surface-inset border border-border-default text-center">
-                  <div className="w-10 h-10 mx-auto mb-2 rounded-full bg-gold-pale flex items-center justify-center">
-                    <span className="text-gold-main font-mono text-sm font-medium">60%</span>
-                  </div>
-                  <p className="text-xs font-medium text-ink-primary">Exposure Cap</p>
-                  <p className="text-xs text-ink-tertiary mt-1">Max gold deploy</p>
-                </div>
-                <div className="p-4 bg-surface-inset border border-border-default text-center">
-                  <div className="w-10 h-10 mx-auto mb-2 rounded-full bg-signal-success/10 flex items-center justify-center">
-                    <span className="text-signal-success font-mono text-sm font-medium">20%</span>
-                  </div>
-                  <p className="text-xs font-medium text-ink-primary">Buffer</p>
-                  <p className="text-xs text-ink-tertiary mt-1">Redemption reserve</p>
-                </div>
-                <div className="p-4 bg-surface-inset border border-border-default text-center">
-                  <div className="w-10 h-10 mx-auto mb-2 rounded-full bg-slate-main/10 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-slate-main" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <p className="text-xs font-medium text-ink-primary">DAO Control</p>
-                  <p className="text-xs text-ink-tertiary mt-1">Governance throttle</p>
-                </div>
-              </div>
+              <ul>
+                <li><strong>Multi-signature custody</strong>, with optional modular vaults (Fireblocks, Copper)</li>
+                <li><strong>On-chain caps for exposure:</strong> e.g., max 60% deployed to gold per epoch</li>
+                <li><strong>Redemption buffer:</strong> 10–20% of TVL in reserve</li>
+                <li><strong>Governance throttle:</strong> DAO can pause or redirect flow based on performance</li>
+              </ul>
             </section>
 
             <hr />
@@ -1227,10 +1197,10 @@ export default function WhitepaperPage() {
               <h3>Market Data Sources</h3>
               
               <ul>
-                <li>Stablecoin market cap: ~$320B — <a href="https://defillama.com/stablecoins" target="_blank" rel="noopener noreferrer" className="text-gold-main hover:text-gold-light underline underline-offset-2">DefiLlama (Sep 2025)</a></li>
-                <li>RWA growth: Tokenized T-bills &gt; $1.5B AUM — <a href="https://messari.io" target="_blank" rel="noopener noreferrer" className="text-gold-main hover:text-gold-light underline underline-offset-2">Messari (Q3 2025)</a></li>
-                <li>Gold arbitrage: Historic spread analysis — <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2981717" target="_blank" rel="noopener noreferrer" className="text-gold-main hover:text-gold-light underline underline-offset-2">SSRN Research</a></li>
-                <li>BlackRock BUIDL announcement — <a href="https://blockworks.co/news/blackrock-buidl" target="_blank" rel="noopener noreferrer" className="text-gold-main hover:text-gold-light underline underline-offset-2">Blockworks</a></li>
+                <li>Stablecoin market cap: ~$320B (<a href="https://defillama.com/stablecoins" target="_blank" rel="noopener noreferrer" className="text-gold-main hover:text-gold-light underline underline-offset-2">DefiLlama, Sep 2025</a>)</li>
+                <li>RWA growth: Tokenized T-bills &gt; $1.5B AUM (<a href="https://messari.io" target="_blank" rel="noopener noreferrer" className="text-gold-main hover:text-gold-light underline underline-offset-2">Messari, Q3 2025</a>)</li>
+                <li>Gold arbitrage: Historic spread analysis (<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2981717" target="_blank" rel="noopener noreferrer" className="text-gold-main hover:text-gold-light underline underline-offset-2">SSRN</a>)</li>
+                <li>BlackRock BUIDL (<a href="https://blockworks.co/news/blackrock-buidl" target="_blank" rel="noopener noreferrer" className="text-gold-main hover:text-gold-light underline underline-offset-2">Blockworks</a>)</li>
               </ul>
               
               <h3>Legal & Compliance Docs</h3>
