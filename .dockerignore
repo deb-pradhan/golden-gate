@@ -1,0 +1,32 @@
+# Dependencies
+site/node_modules
+.pnp
+.pnp.js
+
+# Build
+site/.next
+site/out
+site/build
+
+# Debug
+npm-debug.log*
+
+# Local env files
+.env*.local
+.env
+
+# Misc
+.DS_Store
+*.pem
+
+# Git
+.git
+.gitignore
+
+# Docs (not needed for build)
+*.md
+deck.md
+designsystem.md
+goldensystem.md
+whitepaper.md
+Narrative.md
