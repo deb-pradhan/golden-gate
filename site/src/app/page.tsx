@@ -173,13 +173,10 @@ function SystemFlowInfographic() {
           <rect x="200" y="120" width="140" height="60" rx="4" fill="#F3F4F6" stroke="#9CA3AF" strokeWidth="2" />
           <text x="270" y="155" textAnchor="middle" className="font-medium text-sm" fill="#374151">Staking</text>
           
-          {/* USDC Input */}
-          <rect x="40" y="110" width="80" height="35" rx="4" fill="#F9FAFB" stroke="#D1D5DB" strokeWidth="1.5" />
-          <text x="80" y="132" textAnchor="middle" className="font-mono text-xs" fill="#6B7280">USDC</text>
-          
-          {/* USDT Input */}
-          <rect x="40" y="155" width="80" height="35" rx="4" fill="#F9FAFB" stroke="#D1D5DB" strokeWidth="1.5" />
-          <text x="80" y="177" textAnchor="middle" className="font-mono text-xs" fill="#6B7280">USDT</text>
+          {/* USDC/USDT Input - Combined */}
+          <rect x="40" y="110" width="80" height="80" rx="4" fill="#F9FAFB" stroke="#D1D5DB" strokeWidth="1.5" />
+          <text x="80" y="145" textAnchor="middle" className="font-mono text-xs" fill="#6B7280">USDC</text>
+          <text x="80" y="165" textAnchor="middle" className="font-mono text-xs" fill="#6B7280">USDT</text>
           
           {/* sUSDau Box - Bottom Left */}
           <rect x="200" y="240" width="140" height="50" rx="4" fill="#FDF6E3" stroke="#B8860B" strokeWidth="2" />
@@ -209,11 +206,8 @@ function SystemFlowInfographic() {
           {/* USDau to Staking */}
           <line x1="270" y1="70" x2="270" y2="118" stroke="#B8860B" strokeWidth="2" markerEnd="url(#arrowGold)" />
           
-          {/* USDC to Staking */}
-          <line x1="120" y1="127" x2="198" y2="140" stroke="#6B7280" strokeWidth="1.5" markerEnd="url(#arrowGray)" />
-          
-          {/* USDT to Staking */}
-          <line x1="120" y1="172" x2="198" y2="160" stroke="#6B7280" strokeWidth="1.5" markerEnd="url(#arrowGray)" />
+          {/* USDC/USDT to Staking */}
+          <line x1="120" y1="150" x2="198" y2="150" stroke="#6B7280" strokeWidth="1.5" markerEnd="url(#arrowGray)" />
           
           {/* Staking to sUSDau */}
           <line x1="270" y1="180" x2="270" y2="238" stroke="#B8860B" strokeWidth="2" markerEnd="url(#arrowGold)" />
