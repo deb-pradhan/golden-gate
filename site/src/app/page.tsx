@@ -224,9 +224,6 @@ function SystemFlowInfographic() {
           {/* Protocol Treasury to Gold Arbitrage Revenue */}
           <line x1="500" y1="150" x2="500" y2="188" stroke="#B8860B" strokeWidth="2" markerEnd="url(#arrowGold)" />
           
-          {/* Gold Arbitrage Revenue to GG Emissions */}
-          <line x1="440" y1="225" x2="422" y2="245" stroke="#B8860B" strokeWidth="2" markerEnd="url(#arrowGold)" />
-          
           {/* GG Emissions to sUSDau */}
           <line x1="370" y1="265" x2="342" y2="265" stroke="#B8860B" strokeWidth="2" markerEnd="url(#arrowGold)" />
           
